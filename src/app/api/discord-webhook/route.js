@@ -6,7 +6,7 @@ export async function POST(req) {
 
         const payload = {
             username: 'Migrinho',
-            avatar_url: '/migrinho.png',
+            avatar_url: 'https://immigration-term.vercel.app/migrinho.png',
             embeds: [
                 {
                     title: '📢 Notificação de Termo de Imigração',
@@ -29,7 +29,7 @@ export async function POST(req) {
                     ],
                     footer: {
                         text: 'Enviado por Migrinho',
-                        icon_url: '/migrinho.png',
+                        icon_url: 'https://immigration-term.vercel.app/migrinho.png',
                     },
                     timestamp: new Date().toISOString(),
                 },
