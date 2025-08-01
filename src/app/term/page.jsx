@@ -12,7 +12,7 @@ import { createUser } from "@/lib/database";
 
 const questions = [
     {question: "A sua Allowlist no XP será perdida após a migração?", answer: false},
-    {question: "Se você focar somente no GG, não poderá recuperar a sua allowlist por ausencia no XP?", answer: true},
+    {question: "Caso o player fique ausente no XP por estar focado no GG ele não poderá recuperar a allowlist no XP", answer: true},
     {question: "Sobre o alinhamento com a equipe do GG, a equipe do XP irá informar a data e a hora?", answer: false},
     {question: "Os itens VIPs serão transferidos?", answer: false},
     {question: "O Rumo do seu personagem pode mudar no GG?", answer: true},
