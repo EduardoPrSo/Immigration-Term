@@ -6,7 +6,7 @@ export async function POST(req) {
 
         const payload = {
             username: 'Migrinho',
-            avatar_url: 'https://i.imgur.com/AfFp7pu.png',
+            avatar_url: '/migrinho.png',
             embeds: [
                 {
                     title: '📢 Notificação de Termo de Imigração',
@@ -28,8 +28,8 @@ export async function POST(req) {
                         },
                     ],
                     footer: {
-                        text: 'Enviado por Next.js',
-                        icon_url: 'https://i.imgur.com/AfFp7pu.png',
+                        text: 'Enviado por Migrinho',
+                        icon_url: '/migrinho.png',
                     },
                     timestamp: new Date().toISOString(),
                 },
