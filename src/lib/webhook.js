@@ -1,5 +1,5 @@
 export const sendWebhook = async (user, accept) => {
-    await fetch("/api/discord-webhook", {
+    await fetch("https://immigration-term.vercel.app/api/discord-webhook", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
