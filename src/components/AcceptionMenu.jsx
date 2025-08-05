@@ -5,7 +5,7 @@ export default function AcceptionMenu({session, setForm}) {
     const [accept, setAccept] = useState(false);
 
     return (
-        <div className="flex w-full justify-between h-full mt-5">
+        <div className="flex w-full justify-between mt-5 pl-1">
             <div className="flex gap-2 items-center">
                 <input type="checkbox" id="accept" onChange={(e)=>setAccept(e.target.checked)} value={accept} />
                 <label htmlFor="accept" className="text-white cursor-pointer">Eu declaro que li e aceito os termos.</label>

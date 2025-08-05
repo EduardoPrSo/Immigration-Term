@@ -93,7 +93,7 @@ const checkAnswers = () => {
             }}
         >
             <TopBar user={session.user} />
-            <div className="relative w-6/12 h-full bg-zinc-800/90 rounded-md p-5">
+            <div className="relative w-6/12 h-full bg-zinc-800/90 rounded-md p-2 px-3">
                 <div className="flex flex-col justify-between items-center">
                     {formulary ? (
                         <Formulary answers={answers} setAnswers={setAnswers} questions={questions} />

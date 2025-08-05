@@ -1,6 +1,6 @@
 export default function Topics({accepted}) {
     const topics = [
-        "O Player ao ser transferido para o COMPLEXO GG não perderá a sua Allowlist no COMPLEXOXP",
+        "O Player ao ser transferido para o COMPLEXO GG não perderá a sua Allowlist no COMPLEXO XP",
         "A Allowlist só será perdida caso o player não logue no servidor por mais de 2 semanas. Caso esteja ausente por estar focado no Complexo GG, só será possível retornar refazendo a Entrevista",
         "Caso o player retorne ao XP depois da sua transferência somente para causar problemas, quebrar regras, causar alvoroço ou ficar contando vantagem de ter conseguido a migração, o player está sujeito a perder a Allowlist tanto no Complexo GG quanto no ComplexoXP",
         "Todos os aprovados terão que participar de um alinhamento com a equipe do ComplexoGG antes de conseguirem logar no servidor. A data é marcada somente pela equipe do ComplexoGG. A equipe do ComplexoXP não dá previsão de datas e não avisará quando esse alinhamento será marcado, tudo fica a par da equipe do GG",

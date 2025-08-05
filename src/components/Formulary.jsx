@@ -15,7 +15,7 @@ export default function Formulary({answers, setAnswers, questions}) {
             {questions.map((key, index) => (
                 <div 
                     key={index}
-                    className="cursor-pointer flex flex-col items-end gap-1"
+                    className="flex flex-col items-end gap-1"
                 >
                     <div key={index} className="flex gap-3 items-center w-full">
                         <h1 className="text-[2.5rem] text-zinc-600 font-bold">{index+1}</h1>

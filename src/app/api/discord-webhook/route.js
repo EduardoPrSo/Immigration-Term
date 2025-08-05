@@ -1,12 +1,14 @@
 export async function POST(req) {
+    const API_URL = process.env.API_URL
+    const webhookUrl = process.env.DISCORD_WEBHOOK;
+
     try {
         const body = await req.json();
 
-        const webhookUrl = process.env.DISCORD_WEBHOOK;
 
         const payload = {
             username: 'Migrinho',
-            avatar_url: 'https://immigration-term.vercel.app/migrinho.png',
+            avatar_url: `${API_URL}/migrinho.png`,
             embeds: [
                 {
                     title: '📢 Notificação de Termo de Imigração',
@@ -29,7 +31,7 @@ export async function POST(req) {
                     ],
                     footer: {
                         text: 'Enviado por Migrinho',
-                        icon_url: 'https://immigration-term.vercel.app/migrinho.png',
+                        icon_url: `${API_URL}/migrinho.png`,
                     },
                     timestamp: new Date().toISOString(),
                 },

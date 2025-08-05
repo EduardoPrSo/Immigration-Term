@@ -1,5 +1,7 @@
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+
 export const sendWebhook = async (user, accept) => {
-    await fetch("https://immigration-term.vercel.app/api/discord-webhook", {
+    await fetch(`${API_URL}/api/discord-webhook`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
