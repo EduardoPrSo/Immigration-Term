@@ -26,6 +26,7 @@ export default function Term() {
     const [formulary, setFormulary] = useState(false);
     const [session, setSession] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [termAccepted, setTermAccepted] = useState(false);
 
     const handleReload = () => {
         window.location.reload()
@@ -76,6 +77,7 @@ const checkAnswers = () => {
         sendWebhook(session.user, true)
         handleReload()
         createUser(session.user, true)
+        setTermAccepted(true)
     }
 }
 
@@ -94,7 +96,7 @@ const checkAnswers = () => {
         >
             <TopBar user={session.user} />
             <div className="relative w-6/12 h-full bg-zinc-800/90 rounded-md p-2 px-3">
-                <div className="flex flex-col justify-between items-center">
+                {!termAccepted ? <div className="flex flex-col justify-between items-center">
                     {formulary ? (
                         <Formulary answers={answers} setAnswers={setAnswers} questions={questions} />
                     ) : (
@@ -115,7 +117,7 @@ const checkAnswers = () => {
                             FINALIZAR
                         </button>
                     </div>}
-                </div>
+                </div> : <h1 className="w-full text-center text-white font-bold text-2xl">Você já assinou este termo</h1>}
             </div>
         </div>
     );
