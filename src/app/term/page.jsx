@@ -28,10 +28,6 @@ export default function Term() {
     const [loading, setLoading] = useState(true);
     const [termAccepted, setTermAccepted] = useState(false);
 
-    const handleReload = () => {
-        window.location.reload()
-    }
-
     useEffect(() => {
         async function fetchSession() {
             const res = await fetch("/api/auth/session");
@@ -74,10 +70,9 @@ const checkAnswers = () => {
         setFormulary(false);
         setAnswers({});
     } else {
-        sendWebhook(session.user, true)
-        handleReload()
-        createUser(session.user, true)
         setTermAccepted(true)
+        sendWebhook(session.user, true)
+        createUser(session.user, true)
     }
 }
 
@@ -96,28 +91,31 @@ const checkAnswers = () => {
         >
             <TopBar user={session.user} />
             <div className="relative w-6/12 h-full bg-zinc-800/90 rounded-md p-2 px-3">
-                {!termAccepted ? <div className="flex flex-col justify-between items-center">
-                    {formulary ? (
-                        <Formulary answers={answers} setAnswers={setAnswers} questions={questions} />
-                    ) : (
-                        <Topics accepted={alreadyAccepted} />
+                {!termAccepted ? 
+                    <div className="flex flex-col justify-between items-center">
+                        {formulary ? (
+                            <Formulary answers={answers} setAnswers={setAnswers} questions={questions} />
+                        ) : (
+                            <Topics accepted={alreadyAccepted} />
+                        )}
+                        {(!alreadyAccepted && !formulary) && <AcceptionMenu session={session} setForm={setFormulary} />}
+                        {formulary && <div className="fixed flex justify-center bottom-10 w-[10rem] gap-2">
+                            <button
+                                className="px-3 py-2 w-28 bg-red-500 border border-red-600 rounded-md cursor-pointer text-white/70 hover:text-white transition-colors delay-100"
+                                onClick={()=>{setFormulary(false);setAnswers({})}}
+                            >
+                                VOLTAR
+                            </button>
+                            <button
+                                className="px-3 py-2 w-28 bg-blue-500 border border-blue-600 rounded-md cursor-pointer text-white/70 hover:text-white transition-colors delay-100"
+                                onClick={checkAnswers}
+                            >
+                                FINALIZAR
+                            </button>
+                        </div>}
+                    </div> : (
+                        <h1 className="w-full text-center text-white font-bold text-2xl">Você já assinou este termo</h1>
                     )}
-                    {(!alreadyAccepted && !formulary) && <AcceptionMenu session={session} setForm={setFormulary} />}
-                    {formulary && <div className="fixed flex justify-center bottom-10 w-[10rem] gap-2">
-                        <button
-                            className="px-3 py-2 w-28 bg-red-500 border border-red-600 rounded-md cursor-pointer text-white/70 hover:text-white transition-colors delay-100"
-                            onClick={()=>{setFormulary(false);setAnswers({})}}
-                        >
-                            VOLTAR
-                        </button>
-                        <button
-                            className="px-3 py-2 w-28 bg-blue-500 border border-blue-600 rounded-md cursor-pointer text-white/70 hover:text-white transition-colors delay-100"
-                            onClick={checkAnswers}
-                        >
-                            FINALIZAR
-                        </button>
-                    </div>}
-                </div> : <h1 className="w-full text-center text-white font-bold text-2xl">Você já assinou este termo</h1>}
             </div>
         </div>
     );

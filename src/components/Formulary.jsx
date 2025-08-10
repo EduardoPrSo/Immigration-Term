@@ -1,12 +1,6 @@
-import { useEffect, useState } from "react"
 import QuestionRadio from "./QuestionRadio"
 
 export default function Formulary({answers, setAnswers, questions}) {
-
-    useEffect(()=>{
-        console.log(answers)
-    }, [answers, setAnswers])
-
     return (
         <div className="relative flex flex-col w-full h-full text-white gap-2">
             <div className="text-lg font-bold text-center text-white px-3 py-2">
