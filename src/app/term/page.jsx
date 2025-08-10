@@ -71,6 +71,7 @@ const checkAnswers = () => {
         setAnswers({});
     } else {
         setTermAccepted(true)
+        alert("Parabéns, você já assinou os termos e já pode fechar a página!")
         sendWebhook(session.user, true)
         createUser(session.user, true)
     }
